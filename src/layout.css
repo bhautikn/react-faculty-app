@@ -1,0 +1,190 @@
+*{
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: gray; 
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+    background-color: #444; 
+}
+
+.header {
+    background-color: #222;
+    padding: 10px;
+    width: 85%;
+    float: right;
+}
+.search-div{
+    margin-right: 5px;
+    width: 20%;
+    float: right;
+}
+.body {
+    height: 90vh;
+    width: 85%;
+    float: right;
+    padding: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.side-bar {
+    text-align: center;
+    background-color: #222;
+    height: 100vh;
+    width: 15%;
+    float: left;
+    padding: 5px;
+    position: -webkit-sticky;
+    position: fixed;
+}
+
+.link-page {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    margin: 5px 10px;
+    color: seagreen;
+    font-weight: bold;
+    text-decoration: none;
+    border:2px solid seagreen;
+    transition-duration: 500ms;
+}
+
+.link-page:hover {
+    background-color: rgba(18, 55, 34, 0.5);
+}
+
+.logo {
+    font-size: 2em;
+    text-decoration: none;
+    font-weight: bold;
+}
+.image-preloader{
+    height: 100%;
+    width: 100%;
+    animation: preloader-animation 700ms infinite;
+}
+@keyframes preloader-animation{
+    0%{ background-image: linear-gradient(-50deg,lightgrey, lightgrey, lightgrey, lightgrey, darkgrey );}
+    25%{ background-image: linear-gradient(-50deg,lightgrey, lightgrey, lightgrey, darkgrey , lightgrey);}
+    50%{ background-image: linear-gradient(-50deg,lightgrey, lightgrey, darkgrey , lightgrey, lightgrey);}
+    75%{ background-image: linear-gradient(-50deg,lightgrey, darkgrey , lightgrey, lightgrey,  lightgrey);}
+    100%{ background-image: linear-gradient(-50deg,darkgrey , lightgrey, lightgrey, lightgrey, lightgrey);}
+}
+.add-faculty-sign{
+    color: seagreen;
+    text-align: center;
+    font-size: 15em;
+    font-weight: 900;
+}
+.Loading-div{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin: 10px auto;
+    border: 5px solid darkgrey;
+    border-top-color: transparent;
+    animation: Loading-div-animation 700ms infinite linear; 
+}
+@keyframes Loading-div-animation{
+    from{rotate: 0deg;}
+    to{rotate: 360deg;}
+}
+@keyframes loader-animation{
+    0%{
+      left: 0%;
+      width: 0%;
+    }
+    50%{
+      left: 0%;
+      width: 100%;
+    }
+    100%{
+      width: 100%;
+      left: 100%;
+    }
+}
+body{
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+}
+.overlay-div{
+    height: 100vh;
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+    background-color: rgba(10, 10, 10, 0.9);
+}
+.overlay-div .close-btn{
+    width: max-content;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 2px 10px;
+    font-size: 1em;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    user-select: none;
+    border: 1px solid white;
+    float: right;
+    cursor: pointer;
+    transition-duration: 400ms;
+
+}
+.overlay-div .close-btn:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.overlay-div .container-lg{
+    overflow-y: auto;
+    height: 80vh;
+}
+tr{
+    background-color:#444;
+}
+.profile-card:hover{
+    transition-duration: 500ms;
+    transform: translateY(-5px);
+}
+.profile-card-body{
+    width: 25%;
+}
+.link-page-detail{
+    margin-left: 3px;
+}
+
+@media (max-width: 1366px) and (min-width:1024px) {
+    .profile-card-body{
+        width: 33.33333333333%;
+    }
+}
+@media (max-width: 1024px) and (min-width:720px) {
+    .profile-card-body{
+        width: 50%;
+    }
+    .search-div{ width: 50%; }
+}
+@media (max-width: 720px) {
+    .profile-card-body{
+        width: 100%;
+        padding: 5px !important;
+    }
+    .side-bar{
+        width: 20%;
+    }
+    .body{
+        width: 80%;
+    }
+    .header{
+        width: 80%;
+    }
+    .search-div{ width: 100%; }
+    .link-page-detail{display: none;}
+}
